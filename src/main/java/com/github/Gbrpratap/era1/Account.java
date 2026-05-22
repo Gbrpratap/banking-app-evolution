@@ -1,3 +1,5 @@
+package com.github.Gbrpratap.era1;
+
 
 public class Account {
 	
@@ -13,6 +15,10 @@ public class Account {
 		this.balance = balance;
 	}
 	
+	public int getUserId() {
+		return userId;
+	}
+	
 	public int getAccountId() {
 		return accountId;
 	}
@@ -21,11 +27,11 @@ public class Account {
 		return balance;
 	}
 	
-	public getAccountType() {
+	public String getAccountType() {
 		return accountType;
 	}
 	
-	public void deposite(double amount) {
+	public void deposit(double amount) {
 		if(amount > 0) {
 			this.balance += amount;
 			System.out.println("Deposited: " + amount);
@@ -35,7 +41,13 @@ public class Account {
 	}
 	
 	public void withdraw(double amount) {
-		
+		if(amount > 0 && amount <= balance) {
+			this.balance -= amount;
+			System.out.println("Withdrawn: " + amount);
+		}else {
+			System.out.println("Insufficient funds or invalid amount!");
+		}
 	}
 
 }
+
