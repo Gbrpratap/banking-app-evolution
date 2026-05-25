@@ -53,4 +53,3 @@ transaction_type VARCHAR(20),
 transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 FOREIGN KEY (account_id) REFERENCES Accounts(account_id)
 );
-branch 'main' of https://github.com/Gbrpratap/banking-app-evolution

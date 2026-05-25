@@ -31,16 +31,23 @@ public class BankApp {
 		 * The below code created new savings account where accountId argument is ignored and after doing changes in the accountDAO
 		 * like adding interest argument I am method overloading so we can choose between regular account addition and with interest account addition
 		 */
-		/*
+		
+		/*		
 		SavingsAccount mySavings = new SavingsAccount(2, 1, 1000.0, 5.0);
 		mySavings.addInterest();
-		
+
 		AccountDAO accDao = new AccountDAO();
 		accDao.saveAccount(mySavings);
 		*/
 		
-		
-		
+		CheckingAccount myChecking = new CheckingAccount(2, 1, 1000.0, 5);
+
+		try {
+			myChecking.withdraw(100);
+		}catch(InsufficientFundsException e) {
+			e.printStackTrace();
+		}
+
 		
 		
 	}
